@@ -1,0 +1,196 @@
+
+A way to be in total harmony with a machine is to use command line interface <3
+
+// Conflit raccourcis avec ALT et les combinaisons pour char spéciaux
+man command : output the mannual for this command
+command -help
+
+cd .. : navigate up one directory level, use ""
+cd - : navigate to the previous directory (or back)
+
+COPY/PASTE inside bash : 
+Ctrl+Shift+C / Ctrl+Shift+V
+
+SIMPLER way : 
+select what you want to copy (then no need to press anything)
+paste it by clicking wheel button 
+! be careful, if spaces are inside your selection, it will execute the following copy (bash interprets it as 'enter')
+
+systemd-analyze blame : list launch time of apps at boot 
+systemd-analyze plot > plot.svg : detailed versions saved as image file.
+
+apt-fast :  can drastically improve APT download times by downloading packages with multiple connections per package.
+
+screen : run multiple shells inside shell and toogle between them. ctrl+a+c  to create;
+
+sudo apt-get install --reinstall packagename
+
+!-n : re-run the n last command
+
+systemd-analyze blame : programs loaded and their boot-time
+
+ls -l -d P* : display authorization list for any folder (directory bc "ld", otherwise 'l') starting with regex P 
+
+printenv : print the values of any environment variables (ex : PATH, HOME dir)
+
+wc - word, line, and byte or character count
+
+exemple : 
+
+touch /etc/ex 
+sudo !!  : will re-run touch /etc/ex with sudo
+
+touch (option) file_name(s): used to create new empty files and change files timestamps.
++
+touch -d '1 Juin 2020 9:30' file_name : change last access time to file_name
+
+sudo chmod 777 /path_to/file : 7 = (4 (read) + 1 (execute) + 2 (write)). (7_ _) for owner, (_ 7 _) for group, (_ _ 7) for other.
+
+
+sudo apt-get remove <program name>
+
+Monitor system perfs : nmon (command line)
+
+locate #filename | grep path_/to_/search 
+
+sudo gedit <file_to_edit>
+
+ps -e : displays current background process
+
+ps -e | grep chromium : displays only chromium background processes (filter by 'chromium')
+
+sudo kill <process_pid> : kill process by pid
+
+killall <app_name>  : kill all processes by app_name
+
+pkill "app name" : a more powerful way to kill a program containing spaces and using wildcards
+
+su : super user (sudo < su), to modify root folder, you need to be su(peruser) 
+
+history : built-in command to show bash history
+cat ~/.bash_history : show bash command history
+
+pwsh : powershell windows like (snap install powershell --classic)
+
+# Key mapping 
+
+Key mapping dir : cd /usr/share/X11/xkb/symbols/macintosh_vndr/
+xev : output ids of keyboard pressed
+
+/usr/include/X11/keysymdef.h : doc with all keysyms. (e.g : give pairs of corresponding)
+keysym 0x71
+
+key <key_identifier> { [ Symbol(s)_actually_sent ] };
+
+setxkbmap -query : current layout in use ('variant' is the one specified (xkb_symbols "<variant>") in /usr/share/X11/xkb/symbols/<language>)
+
+## Hardware
+
+lscpu : cpu infos
+lsusb : list USB devices  
+nvidia-smi : shows nvidia GPU usage 
+## Ergonomic
+
+Set night light luminosity hue/temperature (from 1000 to 10 000 (blue)) : gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 3800
+
+
+
+
+virtualenv <virtual_name> --python=python3.6 : create virtualenv with python 3.6
+
+Since Python 3, the Python Docs suggest creating the virtual environment with the following command:
+
+python3 -m venv env
+
+
+Next, make sure you use pip command provided inside the virtualenv (YOUR_ENV/bin/pip). Or just activate the virtualenv (source YOUR_ENV/bin/activate) as a convenient way to call the proper commands for python interpreter or pip
+
+pip freeze
+or
+pip3 freeze : show installed packages
+
+or inside python shell :
+print(<package_name>.__version__)
+print(os.path.abspath(<package_name>.__file__)) : returns dir of the package init
+
+pip install --upgrade (package_name)
+
+## Virtual Env related stuff (19.03.2020) : 
+
+!!! Before you can start installing or using packages in your virtual environment you’ll need to activate it. Activating a virtual environment will put the virtual environment-specific python and pip executables into your shell’s PATH.
+source activate : virtualenv/bin (dossier parent)
+
+
+
+source venv/bin/activate : start running venv 
+
+Editing & Writing PDFs (full OCR abilities): 
+- Adobe acrobat pro (use the app like on windows with wine emulator), following this tutorial :
+https://linuxconfig.org/how-to-install-latest-adobe-acrobat-reader-dc-on-ubuntu-18-04-bionic-beaver-linux-with-wine
+
+Cafelat Robot vs Flair vs EspressoForge vs Portaspresso vs Rok vs Aram
+
+
+# Useful apps
+
+apt install pulseaudio-equalizer : for people who love music (and in this cov-19 event I want my neighbors to feel relax by removing bass freqs)
+
+
+
+## Fixes & speedups
+
+sudo gedit /etc/systemd/system.conf : (line : DefaultTimeoutStopSec=90s ## to 5s) fix slow shutdown / restart of Ubuntu 
+
+service --status-all : list any services launched at startup
+
+apt fast : can drastically improve APT download times by downloading packages with multiple connections per package.
+sudo service <name> stop : stop a service from running
+
+sudo apt-get clean : empty temporary cacge--he
+sudo apt-get autoremove : for packags and dependencies
+
+sudo apt-get install preload : Preloading’ is the practice of keeping necessary files in RAM. This is many times faster than placing files on the hard drive. The Preload daemon works by running in the background and monitoring which applications you use most frequently.
+Restart and it will load in the background
+
+
+
+To get the best download speed when updating software, you should always use a mirror that’s close to your location as possible. Ubuntu software repositories are mirrored across the world. You should verify that you are using the one that is nearest to you. This is usually selected for you automatically during setup.
+
+systemd-analyze plot > plot.svg
+
+Grub bootmenu settings : 
+
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo apt-get install grub-customizer // GUI version : default operating system, timeout, resolution and advanced features
+
+sudo apt-get update
+sudo apt-get install grub-customizer
+
+
+
+Xorg config:
+
+
+
+class SearchResults:
+    
+    def __init__(self, 
+                 data: pd.DataFrame,
+                 columns = None):
+        self.results = data
+        if columns:
+            self.results = self.results[columns]
+            
+    def __getitem__(self, item):
+        return Paper(self.results.loc[item])
+    
+    def __len__(self):
+        return len(self.results)
+        
+    def _repr_html_(self):
+        return self.results._repr_html_()
+
+
+
+
+
