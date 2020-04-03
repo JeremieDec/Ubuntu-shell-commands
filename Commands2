@@ -1,7 +1,7 @@
 
 A way to be in total harmony with a machine is to use command line interface <3
 
-// Conflit raccourcis avec ALT et les combinaisons pour char spéciaux
+
 man command : output the mannual for this command
 command -help
 
