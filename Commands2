@@ -5,6 +5,7 @@ command -help
 
 cd .. : navigate up one directory level, use ""
 cd - : navigate to the previous directory (or back)
+bashdb : a debugger for bash  (install instructions for ubuntu 18.04 : https://github.com/rogalmic/vscode-bash-debug/issues/67)
 sudo su : super-user commands escalation
 
 COPY/PASTE inside bash : 
