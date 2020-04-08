@@ -7,7 +7,8 @@ cd .. : navigate up one directory level, use ""
 cd - : navigate to the previous directory (or back)
 bashdb : (more complete) debugger for bash (install instructions for ubuntu 18.04 : https://github.com/rogalmic/vscode-bash-debug/issues/67)
 sudo su : super-user commands escalation
-
+htop : Process explorer/ System Monitor (like top a bit more complete)
+ Advanced process explorer : monitoring system calls (such as file creation or writes),
 COPY/PASTE inside bash : 
 Ctrl+Shift+C / Ctrl+Shift+V
 
