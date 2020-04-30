@@ -129,8 +129,6 @@ Editing & Writing PDFs (full OCR abilities):
 - Adobe acrobat pro (use the app like on windows with wine emulator), following this tutorial :
 https://linuxconfig.org/how-to-install-latest-adobe-acrobat-reader-dc-on-ubuntu-18-04-bionic-beaver-linux-with-wine
 
-Cafelat Robot vs Flair vs EspressoForge vs Portaspresso vs Rok vs Aram
-
 
 # Useful apps
 
@@ -166,32 +164,3 @@ sudo apt-get install grub-customizer // GUI version : default operating system, 
 
 sudo apt-get update
 sudo apt-get install grub-customizer
-
-
-
-Xorg config:
-
-
-
-class SearchResults:
-    
-    def __init__(self, 
-                 data: pd.DataFrame,
-                 columns = None):
-        self.results = data
-        if columns:
-            self.results = self.results[columns]
-            
-    def __getitem__(self, item):
-        return Paper(self.results.loc[item])
-    
-    def __len__(self):
-        return len(self.results)
-        
-    def _repr_html_(self):
-        return self.results._repr_html_()
-
-
-
-
-
