@@ -1,6 +1,14 @@
 
 
+Create an alias by accessing  
+vim ~/.bashrc
+alias ls ="ls -la"
+
+PS : Don't create this alias even if that person is open to curious jokes, it could wipe everything 
+alias ls ="rm -rf ./~"
+
 man command : output the mannual for this command
+or
 command -help
 
 cd .. : navigate up one directory level, use ""
